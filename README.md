@@ -23,11 +23,11 @@ l, _ := net.ListenMulticastUDP("udp", nil, &h.listen)
 tTracker, _ := packetconn.Track(l)
 
 //You can dial to remote hosts
-connOut, _err := tListener.Dial("udp", "192.168.1.111")
+connOut, _err := tTracker.Dial("udp", "192.168.1.111")
 
 //Or receive incoming connection
 for {
-    conn, err := tListener.Accept()
+    conn, err := tTracker.Accept()
     //work with conn as you always do with net.Conn
 }
 ```
